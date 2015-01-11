@@ -2,16 +2,15 @@
 print("Course Project 1, Plot 1")
 print("Reading data ...")
 data <- read.csv("household_power_consumption.txt", sep=";", na.strings="?",as.is=T)
-
-# Format date and time columns
-print("Formatting data ...")
-data$asDate <- as.Date(data$Date,"%d/%m/%Y")
+print(sprintf("%d observations",nrow(data)))
 
 # Select data
 print("Selecting data ...")
+data$asDate <- as.Date(data$Date,"%d/%m/%Y") #create date column for selection
 d1 <- as.Date("2007-02-01")
 d2 <- as.Date("2007-02-02")
 tmp1 <- data[data$asDate==d1 | data$asDate==d2,]
+print(sprintf("%d observations",nrow(tmp1)))
 
 # Plot histogram to png file
 print("Plotting data ...")
