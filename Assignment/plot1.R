@@ -14,6 +14,7 @@ print(sprintf("%d observations",nrow(tmp1)))
 
 # Plot histogram to png file
 print("Plotting data ...")
+Sys.setlocale("LC_TIME","English") #ensure locale is English in order to match weekdays names in x labels
 png("plot1.png",bg="transparent") # open png device with transparent background in order to match reference figure
 hist(tmp1$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
 dev.off() #close png device

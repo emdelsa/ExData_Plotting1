@@ -15,6 +15,7 @@ print(sprintf("%d observations",nrow(tmp1)))
 
 # Plot to png file
 print("Plotting data ...")
+Sys.setlocale("LC_TIME","English") #ensure locale is English in order to match weekdays names in x labels
 png("plot4.png",bg="transparent") # open png device with transparent background in order to match reference figure
 par(mfrow=c(2,2))
 with(tmp1, {
